@@ -41,10 +41,10 @@ services:
         ports:
             - 30303:30303/tcp
             - 30303:30303/udp
-#            - 8545:8545 # TODO: remove when switched to lighthouse
+#            - 8545:8545
         env_file: .env
         command: /root/scripts/start-geth.sh
-        restart: always
+        restart: on-failure
         networks:
             - net
 networks:
